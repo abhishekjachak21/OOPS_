@@ -1,0 +1,8 @@
+Customer Name :Abh
+Wheel Soap(in nos) : 5
+tea (in gram) : 5
+rice(basmati)(in kg): 3
+rin(Soap)(in nos) : 24
+agarbatti (in  nos) : 2
+maida(in kg) : 4
+gehu (in kg) : 5
