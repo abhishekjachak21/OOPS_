@@ -12,8 +12,8 @@ public:
    
    Bank_Loan(){
     name= " " ;
-    loan_amt = 0;
     loan_no = 0;
+    loan_amt = 0;
     loan_typ = " ";
    }
     Bank_Loan(string a,int b,int c,string d){
@@ -24,10 +24,10 @@ public:
    }
    Bank_Loan(Bank_Loan &b2)
    {
-    name= b2.a;
-    loan_no = b2.b;
-    loan_amt = b2.c;
-    loan_typ = b2.d;
+    name= b2.name;
+    loan_no = b2.loan_no;
+    loan_amt = b2.loan_amt;
+    loan_typ = b2.loan_typ;
    }
 
 
@@ -59,18 +59,20 @@ public:
     << " Amount of loan !!" << "\n" ;
   }
 };
-int main()
-{
-    Bank_Loan b1,b2("Abhi",4511,7500,"homeloan"),b3(b2);
-    cout << endl ;
+
+int main() {
+    Bank_Loan b1, b2("Abhi", 4511, 7500, "homeloan"), b3(b2);
+    cout << endl;
     b1.accept();
     b1.display();
-    cout << endl ;
-     b2.accept();
+    cout << endl;
+    // b2.accept();
     b2.display();
-    cout << endl ;
-     b3.accept();
+    cout << endl;
+    // b3.accept();
     b3.display();
+
+    return 0;
 }
 
 // int main(){

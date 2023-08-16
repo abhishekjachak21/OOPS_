@@ -6,20 +6,15 @@ using namespace std ;
 
 class mobile{
   int ram,battery;
-<<<<<<< HEAD
   string name,processor;
-=======
-  string name;
-  string processor;
->>>>>>> f44687cb5e3a0244ce413f70afc972e6208b2bc2
 
   public :
 
   mobile()
   {     
-     name = "     " ;
+     name = "" ;
      ram = 0;
-     processor = "      " ;
+     processor = "" ;
      battery = 0 ;
   }
 
@@ -39,13 +34,13 @@ class mobile{
      battery = pico2.battery ;
   }
 
-   mobile(mobile &pico)
-  {
-     name = pico.name ;
-     ram = pico.ram;
-     processor = pico.processor ;
-     battery = pico.battery ;
-  }
+  //  mobile(mobile &pico)
+  // {
+  //    name = pico.name ;
+  //    ram = pico.ram;
+  //    processor = pico.processor ;
+  //    battery = pico.battery ;
+  // }
 
   void getmobiledata();
   void displaymobiledata();
@@ -62,7 +57,7 @@ void mobile::getmobiledata(){
 }
 
 void mobile::displaymobiledata(){
-  cout<<"\nYour Mobile Details: \n";
+  cout<<"\nYour Mobile Details: ";
  cout << "\n Name: " << name ;
  cout << "\n Ram: " << ram ;
  cout << "\n Processor: " << processor ;
@@ -70,13 +65,13 @@ void mobile::displaymobiledata(){
 }
 
 int main(){
-  mobile pico,pico2("Nokia",8,"Snap",5000),pico3(pico2),pico4(pico);
+  mobile pico,pico2("Nokia",8,"Snap",5000),pico3(pico2),pico4(pico2);
   
   pico.getmobiledata();
   pico.displaymobiledata();
   pico2.displaymobiledata();
   pico3.displaymobiledata();
-  pico4.getmobiledata();
+  // pico4.getmobiledata();
   pico4.displaymobiledata();
   
 
