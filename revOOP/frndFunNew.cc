@@ -4,7 +4,7 @@ using namespace std;
 class B;  //need to be declared bcz we're using it in class A
 
 class A{
-  int a=1,b=4;
+  int a=5,b=4;
  public: 
   friend int val(A aa,B bb);
 

@@ -2,12 +2,11 @@
 using namespace std;
 
 
-
 class baap {
     int w = 67;
 
 public:
-    virtual void display() {
+     void display() {
         cout << "Base Class Display: " << w << endl;
     }
 };
@@ -16,7 +15,7 @@ class beta : public baap {
     int v = 43;
 
 public:
-    void display() override {
+    void display() {
         cout << "Derived Class Display: " << v << endl;
     }
 };
@@ -26,10 +25,42 @@ int main() {
     bb.display();  // Calls the overridden function in the derived class
 
     // You can also call the base class version explicitly
-    bb.baap::display();  // Calls the overridden function in the base class
+     bb.baap::display();  // Calls the overridden function in the base class
 
     return 0;
 }
+
+
+
+
+
+// class baap {
+//     int w = 67;
+
+// public:
+//     virtual void display() {
+//         cout << "Base Class Display: " << w << endl;
+//     }
+// };
+
+// class beta : public baap {
+//     int v = 43;
+
+// public:
+//     void display() override {
+//         cout << "Derived Class Display: " << v << endl;
+//     }
+// };
+
+// int main() {
+//     beta bb;
+//     bb.display();  // Calls the overridden function in the derived class
+
+//     // You can also call the base class version explicitly
+//     bb.baap::display();  // Calls the overridden function in the base class
+
+//     return 0;
+// }
 
 
 
