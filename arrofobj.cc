@@ -13,6 +13,7 @@ public:
    
    Bank_Loan(){
     name= " " ;
+    // name
     loan_amt = 0;
     loan_no = 0;
     loan_typ = " ";
