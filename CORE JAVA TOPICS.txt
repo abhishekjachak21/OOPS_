@@ -9,6 +9,7 @@ Exception Handling
 Multithreading
 Abstraction
 Encapsulation
+Object Class
 Inner-Outer Classes
 Generics
 Java Memory Management and Garbage Collection
