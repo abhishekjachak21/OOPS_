@@ -1,0 +1,28 @@
+SPRING INTERVIEW QUESTIONS
+
+-> Spring features
+- IoC, DI, Spring container, Spring MVC, Spring data access(ORM), 
+simplified configuration, real-time capabilities.
+
+-> Spring vs Spring Boot
+- Use spring if you’re building a highly customized, large-scale enterprise application,& has very specific requirements.
+- Spring Boot is a framework built on top of the Spring Framework
+- spring boot widely used in microservices, REST API development, cloud-native applications, and rapid prototyping
+- Spring boot = auto-configuration. Spring = manual configuratio
+- Spring Boot is a framework built on top of the Spring Framework that simplifies application development
+
+-> Core Features of Spring Boot
+- Auto-Configuration
+- Starter Dependencies
+- Embedded Servers (Tomcat, Jetty, Undertow)
+- Spring Boot Actuator (health checks, metrics)
+- Spring Initializr
+
+-> What is auto-configuration in Spring Boot, and how does it work?
+- Auto-configuration in Spring Boot automatically configures your application based on the libraries present in the classpath. 
+- For example:
+If spring-web is on the classpath, Spring Boot configures a default DispatcherServlet for web applications.
+If spring-data-jpa is on the classpath, it configures a default EntityManagerFactory and DataSource.
+Auto-configuration is enabled by the @EnableAutoConfiguration annotation, which is part of @SpringBootApplication.
+
+

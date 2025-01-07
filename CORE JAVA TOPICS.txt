@@ -1,0 +1,28 @@
+CORE JAVA 
+# JAVA Core Topics
+Collections
+Stream API
+Lambda Expression
+Polymorphism
+Inheritance
+Exception Handling
+Multithreading
+Abstraction
+Encapsulation
+Inner-Outer Classes
+Generics
+Java Memory Management and Garbage Collection
+
+=================================================================================================================
+
+Abstraction, achieved by abstract class and interfaces
+- why abstraction ? Increases security, hides complexity & can focus on what matters
+- what is ? only essential details while hiding the rest.
+- abstract class can have both abs method, non-abs meth
+- while inheriting into other class or interface, must implement abs methods
+- interface, has "public static final" fields, "public abstract" methods by default
+- after Java8, default and static methods are also allowed
+- after java9, private methods are allowed
+
+
+
