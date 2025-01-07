@@ -15,6 +15,30 @@ Generics
 Java Memory Management and Garbage Collection
 
 =================================================================================================================
+Core Java Topics
+1. Collections
+iterable-collections-list, set, queue - (classs)arylst, linlist, vector (vectr-stk)
+iterable-map-hashmap, treemap
+- implmnt
+List<String>l1 = new ArrayList<String>();
+
+
+#stream
+- modern, functional and declarative way to process collections of data.
+- source(list, array, set) - intermediate(map, filter, sorted, limit) - terminal(reduce, collect, foreach)
+- Once a stream is consumed by a terminal operation, it cannot be reused.
+
+#functional interfaces
+->
+Runnable
+Comparator<T>
+Predicate<T>
+Function<T, R>
+Consumer<T>
+
+#Lambda expressions
+- Encourages the use of functional programming principles
+- Simplifies working with APIs like Streams and Collections.
 
 Abstraction, achieved by abstract class and interfaces
 - why abstraction ? Increases security, hides complexity & can focus on what matters
@@ -24,6 +48,12 @@ Abstraction, achieved by abstract class and interfaces
 - interface, has "public static final" fields, "public abstract" methods by default
 - after Java8, default and static methods are also allowed
 - after java9, private methods are allowed
+
+
+Encapsulation is achieved by:
+1)Declaring fields private.
+2)Providing public getter and setter methods for controlled access.
+
 
 
 

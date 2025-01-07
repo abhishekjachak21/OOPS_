@@ -1,0 +1,8 @@
+Overall study.
+1) Core JAVA
+2) SPRING
+3) SPRINGBOOT
+4) MULESOFT(anypt studio, anypt platform raml)
+5) MYSQL
+6) APIGEE
+======================
