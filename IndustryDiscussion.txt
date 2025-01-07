@@ -1,0 +1,599 @@
+INDUSTRY DISCUSSION by AMAN
+
+user - UI - API - mainframe - DB
+
+JIRA - like FB only
+AGILE, waterball, storypoint, scrum master - see video 
+11 POD - 4ft, 3bk, 1 scrum master, 1 automation, 1 tester
+mainframe, Infosys - finical
+monolithic(tightly coupled -> acc, loan, payments), microservice(disad-maintainence increased)
+insurance - guidewire mainframe tool
+80% -> monolithic, outdated, hard to change
+user -> exp API -> process API -> Syst API -> Core Banking system
+validations are done in exp api
+logic write in process api, changes are done in process but never system api
+- 90% possi , syst api in xml/soap, hard to change syst api
+- if we don't diff three of them API, then it cud monolithic
+- 90% api done in java, .net
+- backbase use apache cml
+-----> MULE is useful in exp API, process API, but never Syst API
+
+API gateway
+- does the work of monotisation
+- mule too is api gateway, for control
+- api is gateway for security purpose
+- it is a layers of authorization
+- person come with gun, so he blocked
+- monotisation - mulesoft, apigee
+- apigee has solid monitsation
+- open source dont do monotisation.
+- without API gateway, nothing possible.
+- KONG - api gateway, less money reqd.
+
+Requirement gathering
+---> UI, architect as BK dev, developer - jira
+
+mule integration with KAFKA is v.imp
+- producer, consumer
+- consumer has listeners to listen notifications of by producer
+
+
+=====================================
+Got it! Let’s go step by step with **detailed explanations** of each point in an **industrial context**, correcting any misconceptions if necessary. Here’s a deeper dive:
+
+---
+
+### **1. User - UI - API - Mainframe - Database**
+   - **Flow Explanation**:
+     - **User**: The end-user interacts with the system via a user interface (UI).
+     - **UI**: 
+       - Built using technologies like HTML, CSS, JavaScript frameworks (React, Angular).
+       - It sends requests to the backend (API) for data or actions.
+     - **API (Backend)**:
+       - Acts as the bridge between the UI and the underlying systems.
+       - Processes requests, applies business logic, and retrieves or modifies data.
+     - **Mainframe**:
+       - Large-scale legacy systems used for critical applications (e.g., core banking).
+       - Data might be stored in hierarchical or flat-file formats, accessed via COBOL programs or APIs.
+     - **Database (DB)**:
+       - A structured data store (e.g., MySQL, PostgreSQL, Oracle).
+       - APIs interact with databases to fetch or store data.
+
+   - **Real-world example**:
+     - In online banking:
+       - A user logs in via the UI, which sends the credentials to the backend API.
+       - The API validates the user by querying the mainframe for existing customer details and retrieves account balances from the database.
+
+---
+
+### **2. JIRA - Like FB Only**
+   - **Detailed Explanation**:
+     - **JIRA**:
+       - A tool for managing work in software development projects.
+       - Tracks issues, tasks, bugs, features, and project progress.
+       - Organized using boards (Kanban, Scrum) with columns for stages (To Do, In Progress, Done).
+
+   - **Why "Like FB"?**
+     - It’s a central hub where all team members collaborate and update statuses, like sharing posts or updates on Facebook.
+
+   - **Practical Use**:
+     - Developers log tasks (e.g., "Build login API").
+     - QA testers track bugs (e.g., "Login API returns 500 error").
+     - Managers monitor overall progress.
+
+---
+
+### **3. Agile, Waterfall, Story Points, Scrum Master**
+   - **Agile**:
+     - A **flexible, iterative** approach to software development.
+     - Key concepts:
+       - **Sprints**: Short, fixed timeframes (e.g., 2 weeks) for delivering incremental functionality.
+       - **Daily Stand-ups**: Quick meetings to discuss progress, blockers, and plans.
+       - **Retrospectives**: Post-sprint discussions to identify improvements.
+
+   - **Waterfall**:
+     - A **linear approach**:
+       1. Gather requirements.
+       2. Design the solution.
+       3. Develop the product.
+       4. Test the product.
+       5. Deploy.
+     - No scope for changes once a phase is completed.
+
+   - **Story Points**:
+     - A unit of estimation used to measure the complexity or effort required for a task.
+     - Tasks are estimated in points (e.g., 1 = very easy, 8 = very hard).
+
+   - **Scrum Master**:
+     - A facilitator in Agile who:
+       - Removes roadblocks.
+       - Ensures the team adheres to Scrum practices.
+       - Coordinates sprints and meetings.
+
+---
+
+### **4. 11 POD Structure**
+   - **Detailed Breakdown**:
+     - **POD**: A self-sufficient team delivering a complete feature or functionality.
+     - Members:
+       - **4 Frontend developers**: Build the UI.
+       - **3 Backend developers**: Write APIs and business logic.
+       - **1 Scrum Master**: Facilitates Agile processes.
+       - **1 Automation engineer**: Writes automated tests to ensure reliability.
+       - **1 Tester**: Manually tests features for bugs.
+
+---
+
+### **5. Monolithic vs. Microservices**
+   - **Monolithic**:
+     - Single codebase containing all functionality.
+     - Disadvantages:
+       - Hard to scale: One change requires redeploying the whole application.
+       - Hard to maintain: Tightly coupled components mean one failure could bring down the whole system.
+
+   - **Microservices**:
+     - Application split into smaller, independent services.
+     - Each service:
+       - Runs independently.
+       - Communicates with others via APIs (REST, gRPC).
+     - Disadvantages:
+       - Increased maintenance and operational complexity.
+     - Example:
+       - Netflix has separate services for login, video streaming, recommendations.
+
+---
+
+### **6. Guidewire Mainframe Tool**
+   - **What is Guidewire?**
+     - A suite of applications specifically designed for the insurance industry.
+     - Used for:
+       - Policy management.
+       - Claims processing.
+       - Billing systems.
+
+   - **Industrial Relevance**:
+     - Many insurance companies still rely on Guidewire for its stability and integration with mainframes.
+
+---
+
+### **7. API Layers**
+   - **Experience API**:
+     - Handles user-facing requests.
+     - Performs validation and UI-specific data transformations.
+   - **Process API**:
+     - Contains the business logic.
+     - Handles complex workflows and orchestration.
+     - Most changes occur here to adapt to business requirements.
+   - **System API**:
+     - Interfaces with legacy systems or databases.
+     - Often uses XML/SOAP and is rarely changed due to its complexity.
+
+   - **Why Separate APIs?**
+     - Keeps the system modular and prevents creating a monolithic structure.
+
+---
+
+### **8. API Gateway**
+   - **Purpose**:
+     - Acts as a gatekeeper for APIs.
+     - Functions:
+       - **Security**: Filters and blocks unauthorized requests.
+       - **Monetization**: Tracks and bills for API usage.
+       - **Rate limiting**: Controls the number of requests to prevent overload.
+
+   - **Popular Tools**:
+     - **MuleSoft**: Enterprise-grade API gateway with powerful integration capabilities.
+     - **Apigee**: Strong in API monetization.
+     - **KONG**: An open-source option, cost-effective for startups.
+
+---
+
+### **9. Requirement Gathering**
+   - **Process**:
+     - **UI Designer**: Understands user needs and designs interfaces.
+     - **Architect**: Creates the technical structure.
+     - **Backend Developer**: Implements the architecture.
+
+---
+
+### **10. MuleSoft Integration with Kafka**
+   - **Kafka**:
+     - A distributed event-streaming platform.
+     - **Producer**: Sends events (e.g., a payment initiated).
+     - **Consumer**: Listens for events (e.g., a notification system).
+   - **MuleSoft's Role**:
+     - Integrates Kafka with other systems.
+     - Example:
+       - MuleSoft consumes messages from Kafka for processing and sends results to downstream systems.
+
+---
+
+### **Corrections or Additions**
+- MuleSoft is **not limited to Experience and Process APIs**; it can act as a System API in specific cases.
+- Monolithic systems still dominate, but industries are slowly adopting microservices due to their flexibility.
+
+Would you like me to expand on specific technical implementations, tools, or workflows?
+
+
+====================================================================
+
+
+
+Let’s expand comprehensively on **Apigee and API gateway brands**, **MuleSoft, Apigee, and Spring Boot in industries**, and the **System, Process, and Experience APIs with examples**.
+
+---
+
+### **API Gateway Industry: Overview**
+#### **1. Role of API Gateways in the Industry**
+API gateways manage and secure APIs, serving as intermediaries between clients (users or services) and backend systems. Their industrial role includes:
+- **Security**: Enforce authentication and authorization protocols (e.g., OAuth 2.0, API keys).
+- **Traffic Control**: Apply rate limiting and load balancing to handle high traffic.
+- **Monitoring**: Track API usage, errors, and response times for observability.
+- **Monetization**: Enable businesses to charge for API usage.
+- **Data Transformation**: Convert data formats (e.g., XML to JSON).
+
+#### **2. Major API Gateway Brands**
+##### **a) Apigee**
+- **Industry Usage**: 
+  - Used heavily in industries like banking, healthcare, and telecom, where API monetization is crucial.
+  - Powers APIs for PayPal, Vodafone, and Citibank.
+- **Core Features**:
+  - Strong **monetization capabilities**.
+  - **Developer portal** for third-party developers to explore APIs.
+  - Advanced **analytics** for API traffic.
+- **Pricing**: Premium enterprise tool.
+
+##### **b) MuleSoft**
+- **Industry Usage**:
+  - Focuses on API integration and orchestration.
+  - Popular in logistics, retail, and financial services (e.g., DHL, Unilever).
+- **Core Features**:
+  - Seamless integration with legacy systems and cloud services.
+  - **Reusable API architecture** for rapid development.
+  - Excellent support for **Experience** and **Process APIs**.
+- **Pricing**: Enterprise-level; higher than open-source tools like KONG.
+
+##### **c) Kong**
+- **Industry Usage**:
+  - Ideal for startups and mid-sized companies.
+  - Used by **New Relic** and **T-Mobile**.
+- **Core Features**:
+  - Lightweight and open-source.
+  - Plugin-based, highly customizable gateway.
+- **Pricing**: Cost-effective and scalable.
+
+##### **d) Other Brands**
+- **AWS API Gateway**: Tight integration with AWS cloud services.
+- **NGINX Plus**: Performance-focused, widely used in high-traffic web applications.
+
+---
+
+### **MuleSoft, Apigee, and Spring Boot in the Industry**
+#### **1. MuleSoft**
+- **Focus**: Enterprise integration and API management.
+- **Strengths**:
+  - Bridges legacy systems with modern applications.
+  - Drag-and-drop development in Anypoint Studio.
+- **Example**:
+  - Retailer integrating Shopify (e-commerce), SAP (ERP), and Kafka (event streaming) into a single ecosystem.
+
+#### **2. Apigee**
+- **Focus**: API lifecycle management and monetization.
+- **Strengths**:
+  - Ideal for public-facing APIs where developers need usage analytics and payment systems.
+- **Example**:
+  - Telecom company exposing APIs for developers to build apps using SMS or data services.
+
+#### **3. Spring Boot**
+- **Focus**: Microservices development.
+- **Strengths**:
+  - Lightweight, fast, and modular.
+  - Embedded servers like Tomcat simplify deployment.
+- **Example**:
+  - Building a payment service API in a microservices architecture.
+
+#### **How They Work Together**:
+- **MuleSoft + Kafka**: MuleSoft acts as the integration layer, consuming Kafka messages and pushing them to downstream services.
+- **Apigee + MuleSoft**: Apigee secures and monetizes the APIs created and integrated using MuleSoft.
+- **Spring Boot + Apigee**: Spring Boot services are exposed via Apigee, adding security and monitoring layers.
+
+---
+
+### **System, Process, and Experience APIs**
+These APIs create a layered architecture for modularity and scalability.
+
+#### **1. System APIs**
+- **Purpose**: Connect to core systems or databases. These are low-level, tightly coupled APIs that rarely change.
+- **Examples**:
+  - Fetch customer details from a mainframe (SOAP/XML API).
+  - Retrieve account balances from a core banking system.
+- **Technology**:
+  - Often written in XML/SOAP for legacy systems.
+  - MuleSoft can act as a wrapper around these for modern integrations.
+- **Industrial Use**:
+  - Legacy system modernization by wrapping old APIs in REST interfaces.
+
+#### **2. Process APIs**
+- **Purpose**: Encapsulate business logic and workflows. They aggregate data from multiple System APIs.
+- **Examples**:
+  - Combine loan, credit, and savings details for a customer summary API.
+  - Perform real-time fraud detection by calling multiple backend services.
+- **Technology**:
+  - MuleSoft is ideal for building Process APIs.
+  - Modern tools: Java (Spring Boot), .NET.
+- **Industrial Use**:
+  - A bank’s loan approval system orchestrating credit checks, customer verification, and approval logic.
+
+#### **3. Experience APIs**
+- **Purpose**: Tailor backend data for user interfaces (web apps, mobile apps, kiosks).
+- **Examples**:
+  - Format user data for a mobile app.
+  - Provide geo-specific promotions in a retail app.
+- **Technology**:
+  - Frontend-friendly formats like JSON.
+  - Tools: MuleSoft, Spring Boot, Node.js.
+- **Industrial Use**:
+  - A mobile banking app fetching user details with localized currency and language.
+
+---
+
+### **End-to-End Example**
+#### Scenario: Online Banking
+1. **System API**:
+   - Fetch user account details from the core banking system.
+   - Retrieve transaction history stored in a database.
+2. **Process API**:
+   - Validate user credentials.
+   - Summarize account balances and recent transactions.
+   - Check for fraud by integrating with a third-party fraud detection system.
+3. **Experience API**:
+   - Provide a simplified view of balances and transactions for the mobile app.
+   - Ensure data is formatted as JSON for app compatibility.
+
+---
+
+Would you like more hands-on examples, or a deep dive into a specific tool like Apigee or MuleSoft?
+
+=============================================================\
+
+
+
+
+To understand the **overall workflow** in an industrial setting involving APIs and tools like MuleSoft, Apigee, and API gateways, let’s consider a step-by-step example that ties together **UI, Experience API, Process API, System API, and backend systems**.
+
+---
+
+### **Scenario: Online Banking Workflow**
+A customer uses a banking app to check their account balance and perform a fund transfer.
+
+---
+
+### **1. User Interaction: Frontend (UI Layer)**
+
+- **User Action**:
+  - The customer logs into the mobile app, navigates to the "Accounts" section, and requests account details.
+  - Later, they choose to transfer money to another account.
+- **Tech Stack**:
+  - **UI**: React Native or Angular for mobile/web interface.
+  - **API Call**: Frontend makes HTTPS requests to the **Experience API**.
+
+---
+
+### **2. Experience API**
+- **Role**: Tailor data and logic for the specific user interface.
+- **Tasks**:
+  - Accepts the user's request in a user-friendly format (e.g., JSON).
+  - Passes the request to the **Process API** for business logic.
+  - Formats the response for the UI layer (e.g., removing unnecessary fields).
+- **Example**:
+  - Endpoint: `GET /api/accounts/{userId}`
+  - Response:  
+    ```json
+    {
+      "name": "John Doe",
+      "accounts": [
+        { "type": "Savings", "balance": 5000 },
+        { "type": "Credit Card", "balance": -200 }
+      ]
+    }
+    ```
+
+---
+
+### **3. Process API**
+- **Role**: Handle business logic and orchestrate multiple backend calls.
+- **Tasks**:
+  - Validate user credentials (e.g., check session/token validity).
+  - Call multiple **System APIs** to fetch user details, account balances, and transaction history.
+  - Combine, transform, or process data into meaningful results.
+- **Example**:
+  - Logic:
+    - Call System API 1: Fetch basic user details.
+    - Call System API 2: Fetch all linked accounts and balances.
+    - Perform a fraud check by calling a third-party API.
+    - Aggregate the data into a single response.
+  - Built using:
+    - MuleSoft, Spring Boot, or Node.js.
+
+---
+
+### **4. System API**
+- **Role**: Directly connect to and interact with the core systems or databases.
+- **Tasks**:
+  - Fetch raw data from backend systems such as a core banking platform or legacy mainframes.
+  - Minimal logic, often just exposing data securely.
+- **Example**:
+  - **Core Banking System API**:
+    - Endpoint: `POST /getAccountDetails`
+    - Request:  
+      ```xml
+      <Request>
+        <UserId>12345</UserId>
+      </Request>
+      ```
+    - Response:  
+      ```xml
+      <Response>
+        <Account>
+          <Type>Savings</Type>
+          <Balance>5000</Balance>
+        </Account>
+        <Account>
+          <Type>CreditCard</Type>
+          <Balance>-200</Balance>
+        </Account>
+      </Response>
+      ```
+  - **Tech Stack**:
+    - Often SOAP/XML for legacy systems.
+    - MuleSoft can wrap these into RESTful services.
+
+---
+
+### **5. Backend Systems (Core Systems, Databases, and Mainframes)**
+- **Role**: Store and manage the bank's core data.
+- **Example**:
+  - **Mainframe** stores account and transaction data.
+  - **Database (RDBMS)** contains customer profiles and audit logs.
+  - **Third-party systems** (e.g., fraud detection) for specialized checks.
+
+---
+
+### **6. API Gateway**
+- **Role**: Manage, secure, and monitor API calls across all layers.
+- **Tasks**:
+  - Enforce authentication (e.g., OAuth 2.0) and authorization.
+  - Ensure APIs adhere to rate limits (e.g., 100 requests per minute).
+  - Monitor traffic and performance analytics.
+  - Act as a monetization layer for premium API features.
+- **Example**:
+  - API Gateway (e.g., Apigee, Kong, MuleSoft Gateway):
+    - Secures the **Experience API** endpoint: `/api/accounts/{userId}`.
+    - Applies rate-limiting to prevent abuse.
+    - Logs usage metrics for analysis.
+
+---
+
+### **7. Workflow for Fund Transfer**
+#### Step-by-Step:
+1. **UI Interaction**:
+   - User initiates a fund transfer from their app.
+2. **Experience API**:
+   - Receives the request and passes it to the Process API.
+3. **Process API**:
+   - Validates the user’s input (e.g., account numbers, amount).
+   - Calls System API to fetch sender and receiver account details.
+   - Calls another System API to perform the fund transfer.
+   - Calls a fraud detection service to ensure the transaction is safe.
+   - Responds to the Experience API with success/failure.
+4. **System API**:
+   - Executes the actual transfer in the core banking system.
+   - Updates balances in the database.
+5. **API Gateway**:
+   - Secures all API layers.
+   - Logs the transaction for auditing purposes.
+
+---
+
+### **Workflow Diagram**
+```plaintext
+User (App/Web) --> [Experience API] --> [Process API] --> [System API] --> [Core System]
+                    (UI-tailored)       (Business Logic)     (Data Access)
+```
+
+---
+
+### **Key Points in Industry Practices**
+- **Validation in Experience API**:
+  - Ensures only clean and minimal requests go deeper.
+- **Logic in Process API**:
+  - Encapsulates business-specific rules for maintainability.
+- **System API Stability**:
+  - Rarely changes to avoid disrupting core systems.
+- **API Gateway Usage**:
+  - Central to secure and manage all interactions.
+
+---
+
+Would you like a hands-on code example for any of these APIs, or additional insights into tooling like Apigee and MuleSoft?
+
+==========================================================================
+
+
+Alright! Let’s imagine we’re talking about **REST** and **SOAP APIs** using something a second-grader can easily understand. 😊  
+
+---
+
+### **What’s an API?**
+Think of an API as a way for two toys to talk to each other. Let’s say you have a **robot toy** that can do things like dance, sing, and tell a joke. You tell the robot what to do by pressing buttons. These buttons are like an **API**—they let you control the robot without needing to know how it works inside.
+
+---
+
+### **REST API: A Simple Mailbox System**
+- **What it is**: REST API is like sending and receiving letters using a mailbox.  
+- **How it works**:
+  1. You write a letter (request) asking for cookies.
+  2. You put it in a mailbox addressed to the cookie shop.
+  3. The cookie shop reads your letter and sends you a box of cookies (response) in the same mailbox.
+
+- **Why it’s simple**:
+  - Each letter (request) and box of cookies (response) is separate and doesn’t depend on the others.
+  - The mailbox only needs **addresses (URLs)** and simple instructions like "send cookies" or "show cookie flavors."
+
+- **Example**:
+  - You send: "GET cookies."  
+  - The shop sends back: "Here are chocolate, vanilla, and strawberry cookies."
+
+---
+
+### **SOAP API: A Fancy Protocol**
+- **What it is**: SOAP API is like sending a package through a courier with lots of wrapping, forms, and rules.
+- **How it works**:
+  1. You want cookies, so you pack your request in a big, shiny box.
+  2. You fill out a detailed form (XML) about what you want and why you want it.
+  3. The courier service takes your box, delivers it to the cookie shop, and brings back a new shiny box with the cookies.
+
+- **Why it’s fancy**:
+  - It’s very detailed and follows strict rules about how the box and form should look.
+  - It’s great for big, serious jobs like delivering expensive jewelry or secret codes.
+
+- **Example**:
+  - You send: `<Request><Action>GetCookies</Action></Request>`  
+  - The shop sends back: `<Response><Cookie>Chocolate</Cookie></Response>`
+
+---
+
+### **REST vs. SOAP: Comparing Toys**
+| **Feature**           | **REST API (Simple Toy)**                                    | **SOAP API (Fancy Toy)**                       |
+|------------------------|------------------------------------------------------------|-----------------------------------------------|
+| **Ease of Use**        | Easy, like talking to a friend.                            | Complicated, like writing a formal letter.    |
+| **Message Format**     | Simple (uses JSON, like a postcard).                       | Strict (uses XML, like a full package).       |
+| **Rules**              | Flexible, like playing on the swings.                     | Strict, like building Lego by the manual.     |
+| **Best For**           | Fun stuff like apps or games.                             | Serious stuff like bank transactions.         |
+
+---
+
+### **Story Example: Asking for Ice Cream**
+1. **REST**:  
+   - You say: "Can I have chocolate ice cream?"  
+   - The shop says: "Sure, here it is!"  
+   - Simple, no big deal.
+
+2. **SOAP**:  
+   - You say: "I hereby formally request chocolate ice cream in accordance with Section 3.1 of the Ice Cream Rules."  
+   - The shop says: "We acknowledge your request and provide you with one chocolate ice cream, packed securely."  
+   - Lots of paperwork, but very secure!
+
+---
+
+### **Which One Should You Play With?**
+- If you’re just having fun, use REST—it’s quick and easy!  
+- If you’re doing something very important and serious, use SOAP—it’s extra careful!  
+
+Was that easy to understand? 😊
+
+
+
+
+
+
