@@ -1,6 +1,7 @@
 CORE JAVA 
 # JAVA Core Topics
-Collections
+Collections, Map
+String
 Stream API
 Lambda Expression
 Polymorphism
@@ -10,37 +11,124 @@ Multithreading
 Abstraction
 Encapsulation
 Object Class
+Keywords - static, super, this, final
 Inner-Outer Classes
 Generics
 Java Memory Management and Garbage Collection
 
 =================================================================================================================
-Core Java Topics
-1. Collections
-iterable-collections-list, set, queue - (classs)arylst, linlist, vector (vectr-stk)
-iterable-map-hashmap, treemap
-- implmnt
-List<String>l1 = new ArrayList<String>();
+-> Java is platform-independent, hence portable, can be both compiled & interpreted, secure, multithreaded, object-oriented
+- also memory is system controlled, has more diverse liberaries
+-> JDK > JRE > JVM
+- Developer writes a program (HelloWorld.java) using the JDK.
+JDK compiles it into bytecode (HelloWorld.class).
+JVM reads the .class file and uses the JRE (libraries like System.out) to print the output on the screen.
+
+=================================================================================================================
+#Collections
+- coll framwrk is API, collection is interface, collections is class
+- primitive(8), non prim(array, string, collection, map)
+- java.util.collection - list, set, queue - (classs)arylst, linlist, vector (vectr-stk)
+- java.util.map - hashmap, treemap
+- implmnt => List<String>l1 = new ArrayList<String>();
+- int is a primitive; Integer is a class.
+- methods -> add, addAll, contains	 	
+- 4. How does the HashSet work internally?
+Answer: HashSet uses a hash table to store unique elements. It internally uses an array and a mechanism for handling collisions through bucket chaining or hashing. Each element is stored in a bucket determined by its hash code, ensuring no duplicates.
+- diff betn Comparator and Comparable
 
 
-#stream
+
+					
+
+#String
+- Heap area and SCP(string constant pool/string literal pool)
+- SCP doesn't entertain duplicates.
+- they literals references to same memory location
+- new keyword creates obj in heap and literal in SCP
+- literal creates only in SCP, no dup allowed here, so many prefer this
+- Use equals() to compare string content, not ==, as == Compares references (memory locations).
+- Can you modify a string? (Explain immutability here.)
+- Strings are immutable, so any modification creates a new string object, leaving the original unchanged. 
+This ensures that references to the original string remain unaffected by modifications.
+
+
+
+
+
+#Stream
 - modern, functional and declarative way to process collections of data.
 - source(list, array, set) - intermediate(map, filter, sorted, limit) - terminal(reduce, collect, foreach)
 - Once a stream is consumed by a terminal operation, it cannot be reused.
+- Works well with Stream API, Reduces boilerplate code
 
-#functional interfaces
-->
+
+
+#Lambda expressions
+- Encourages the use of functional programming principles
+- Simplifies working with APIs like Streams and Collections.
+- Functional Interface: Lambda expressions can only be used with functional interfaces (interfaces with exactly one abstract method).
+Example: Runnable, Comparator, Consumer.
+Functional interfaces are annotated with @FunctionalInterface.
+=> functional interfaces
+-					8>
 Runnable
 Comparator<T>
 Predicate<T>
 Function<T, R>
 Consumer<T>
 
-#Lambda expressions
-- Encourages the use of functional programming principles
-- Simplifies working with APIs like Streams and Collections.
 
-Abstraction, achieved by abstract class and interfaces
+
+
+#Polymorphism
+-
+
+
+
+
+
+
+
+#Inheritance
+- 
+
+
+
+
+
+
+
+#Exception Handling
+- exception is a unexpected event, unwanted event occurs in chain of programs which disturbs the whole flow
+- can be handled by try, catch, finally, throw, throws
+- we provide alternative way for exception, and we do not to repair it, so that chain wont brake.
+- object - throwable - exception and error
+- exception(our program responsible) vs error(system responsible)
+- exception two types-> checked(compile) & unchecked(runtime)
+- error only one type -> unchecked(runtime)
+- compile-time (checked exceptions) Still occur at runtime, but you’re forced to prepare for them, jaise maa companyId ka karti h.
+- strongly remember, ALL THE EXCEPTIONS OCCUR AT RUNTIME
+- compile file shows errors are checked exception, & runtime are arithmetic, nullpointr, indexoutofbound etc
+- finally block runs whether try-catch block ran or not.
+- throw used for customized, user-defined programs, customized extends RuntimeException class  
+- throws and throw  >?????
+
+
+
+#Multithreading
+- one process, many threads
+- Thread class vs Runnable interface.
+
+
+
+
+
+
+
+
+ 	
+#Abstraction, achieved by abstract class and interfaces
 - why abstraction ? Increases security, hides complexity & can focus on what matters
 - what is ? only essential details while hiding the rest.
 - abstract class can have both abs method, non-abs meth
@@ -50,9 +138,76 @@ Abstraction, achieved by abstract class and interfaces
 - after java9, private methods are allowed
 
 
-Encapsulation is achieved by:
+
+#Encapsulation is achieved by:
 1)Declaring fields private.
 2)Providing public getter and setter methods for controlled access.
+
+
+
+
+
+
+
+#Object Class
+-> Every class in Java inherits from Object.
+-> Override methods like toString() and equals() to customize behavior for your classes.
+-> Objects with the same equals() must have the same hashCode().
+-> The Object class is like the "grandparent" of all Java classes. It gives basic tools (methods) that all objects can use, like:
+- A way to compare objects (equals).
+- A way to print an object (toString).
+- A way to organize objects in collections (hashCode).
+
+
+
+
+#Keywords - static, super, this, final.
+-> static var are class var, they get initialized only once
+- static is used to create fields, methods, or nested classes that belong to the class itself, not to any instance
+- static members are shared among all instances of the class. They are initialized only once at the class level.
+- static keyword uses for memory management.
+- static methods and fields can be accessed directly using the class name
+- static methods can't access instance-specific fields or methods because they belong to the class, not any object
+-> this is a reference to the current object in a method or constructor.
+- Used to differentiate between instance variables and parameters with the same name.
+- this can be used to invoke another constructor in the same class
+- Useful when passing the current object as an argument to methods
+- this cannot be used inside static methods or blocks.
+-> final word cannot modify variable, cannot override method, cannot inherit class
+
+
+
+
+
+#Inner-Outer Classes
+
+
+
+
+
+
+
+
+
+#Generics
+
+
+
+
+
+
+
+
+
+#Java Memory Management and Garbage Collection
+
+
+
+
+
+
+
+
 
 
 

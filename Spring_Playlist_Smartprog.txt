@@ -1,0 +1,57 @@
+Spring container is core component(heart) of spring framework
+*Responsibilities.
+-> manage bean objects
+-> manage bean lifecycle
+-> DI (dependency injection)
+-> AOP, Tranx manag, etc
+
+*Types
+-> bean factory
+-> applicationContext [its a interface](new, widely used)
+   (used to start spring container)
+
+How Spring Works?
+*POJO class/JavaBean class
+- class with Private fields with public getters and setters. and A no-argument constructor.
+
+*Configuration(used to instruct spring container)
+- Java file (now widely used)
+- Annotations (imp to know)s
+- XML file (old widely used)
+
+ 
+*we also need to add some JAR files, though modern projects typically use Maven or Gradle for dependency management
+*Spring container reads configuration and bean definitions (from XML, annotations, or Java files)
+,based on it, it will create objects, and then we can access objects, and perform our task
+
+*JAVA Configuration
+- POJO class - Student.java (in.sp.beans)
+- bean definition - SpringConfigFile.java (in.sp.resources)
+- Spring Container - Main.java (in.sp.main)
+
+=> What is Dependency Injection?
+- its a design pattern used to achieve Inversion of COntrol in spring framwrk.	  	
+- its main object is to "inject dependencies", means injecting one object(a dependency) into another object
+- its used to achieve loose coupling in java
+- it can be achieved by two ways, 1) setterMethodDI   2)ConstructorDI
+
+
+=> What is Auto-Wiring ?
+- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

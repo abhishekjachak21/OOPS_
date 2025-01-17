@@ -25,4 +25,32 @@ If spring-web is on the classpath, Spring Boot configures a default DispatcherSe
 If spring-data-jpa is on the classpath, it configures a default EntityManagerFactory and DataSource.
 Auto-configuration is enabled by the @EnableAutoConfiguration annotation, which is part of @SpringBootApplication.
 
+=======> SPRING vs SPRING BOOT By Adi and Java
+-> Framework vs Approach:
+Spring is a full-fledged framework.
+Spring Boot is an extension of Spring, providing a convention-over-configuration approach.
+-> Configuration:
+In Spring, multiple configurations (XML/Java/Annotations) are required.
+Spring Boot offers auto-configuration to reduce boilerplate setup.
 
+-> Embedded Servers:
+Spring Boot includes embedded servers (e.g., Tomcat, Jetty) for running applications without external server setup.
+
+-> Component Scanning:
+Spring Boot automatically performs component scanning, simplifying bean detection and initialization.
+
+-> Use of @SpringBootApplication
+- Combines three annotations:
+@EnableAutoConfiguration: Enables Spring Boot's auto-configuration.
+@ComponentScan: Scans for components, services, and beans.
+@Configuration: Allows Java-based configuration.
+
+- Simplifies adding configuration code and reduces manual setup.
+
+-> REST Controller vs Controller
+- Controller (@Controller):
+Used for building web applications with a user interface (UI).
+Typically returns a view name (e.g., JSP, HTML).
+- REST Controller (@RestController):
+Specialized version of @Controller for building REST APIs.
+Directly returns the response body (JSON, XML, etc.), bypassing the view layer.
